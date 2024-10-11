@@ -3,6 +3,8 @@
 
 # User-specific files
 .vscode/
+.vs
+.vs/*
 .vs/
 *.rsuser
 *.suo

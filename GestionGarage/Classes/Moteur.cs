@@ -37,7 +37,7 @@ namespace GestionGarage.Classes
 
         public void Afficher()
         {
-            Console.WriteLine($"Moteur {id} \nName : {nom}\nPuissance : {puissance}");
+            Console.WriteLine($"Moteur {id} \nName : {nom}\nPuissance : {puissance}\n");
         }
     }
 }

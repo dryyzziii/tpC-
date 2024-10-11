@@ -47,9 +47,37 @@ namespace GestionGarage.Classes
         #region public methodes
         public void Afficher()
         {
-            Console.WriteLine($"Vehicule {id} \nNom : {this.nom}\nMarque : {marque}\nPrix: {this.prixHT}\n");
-            this.optionsList.ForEach( option => option.Afficher() );
+            // Affichage avec couleurs et structure
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"\n========== Détails du véhicule (ID: {id}) ==========");
+            Console.ResetColor();
+
+            Console.WriteLine($"Nom       : {this.nom}");
+            Console.WriteLine($"Marque    : {marque}");
+            Console.WriteLine($"Prix Total: {PrixTotal()}€ (HT : {this.prixHT}€, Taxes : {CalculerTaxe()}€)");
+
+            // Affichage des options
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\nOptions :");
+            Console.ResetColor();
+            if (this.optionsList.Count > 0)
+            {
+                this.optionsList.ForEach(option => option.Afficher());
+            }
+            else
+            {
+                Console.WriteLine("Aucune option disponible.");
+            }
+
+            // Affichage du moteur
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nMoteur :");
+            Console.ResetColor();
             this.Moteur.Afficher();
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("=============================================\n");
+            Console.ResetColor();
         }
         public void AfficherOptions()
         {

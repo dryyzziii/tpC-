@@ -1,0 +1,15 @@
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.GeneratedMSBuildEditorConfig.editorconfig
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.AssemblyInfoInputs.cache
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.AssemblyInfo.cs
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.csproj.CoreCompileInputs.cache
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.sourcelink.json
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\GestionGarage.exe
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\GestionGarage.deps.json
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\GestionGarage.runtimeconfig.json
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\GestionGarage.dll
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\GestionGarage.pdb
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.dll
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\refint\GestionGarage.dll
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.pdb
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.genruntimeconfig.cache
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\ref\GestionGarage.dll

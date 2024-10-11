@@ -37,7 +37,7 @@ namespace GestionGarage.Classes
 
         public void Afficher()
         {
-            Console.WriteLine($"Options \nName : {this.nom}\nPrix: {this.prix}");
+            Console.WriteLine($"Options {id} \nName : {this.nom}\nPrix: {this.prix}\n");
         }
     }
 }

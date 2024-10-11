@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionGarage
-build_property.ProjectDir = C:\Users\charl\source\repos\GestionGarage\GestionGarage\
+build_property.ProjectDir = D:\visualStudioProject\tpC-\GestionGarage\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
