@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.GarageGestion.Enum_Garage;
+using GestionGarage.Classes.GarageGestion.VehiculesGestion;
 
-namespace GestionGarage.Classes.Test
+namespace GestionGarage.Classes.GarageGestion.Test
 {
     internal class GarageTest
     {
@@ -17,12 +20,6 @@ namespace GestionGarage.Classes.Test
             Option option4 = new Option("Caméra de recul", 500);
             Option option5 = new Option("Toit ouvrant", 1500);
 
-            // Création de plusieurs véhicules avec options spécifiques
-            List<Option> optionsVoiture1 = new List<Option> { option1, option2, option3 };
-            List<Option> optionsVoiture2 = new List<Option> { option4, option5 };
-            List<Option> optionsMoto1 = new List<Option> { option1 };
-            List<Option> optionsMoto2 = new List<Option> { option2, option3 };
-            List<Option> optionsCamion1 = new List<Option> { option4, option5 };
 
             Moteur moteur1 = new Moteur("nom moteur1", 2000);
             Moteur moteur2 = new Moteur("nom moteur2", 2000);
@@ -30,14 +27,20 @@ namespace GestionGarage.Classes.Test
             Moteur moteur4 = new Moteur("nom moteur4", 2000);
             Moteur moteur5 = new Moteur("nom moteur5", 2000);
 
-            Voiture voiture1 = new Voiture("Renault Clio", 15000, optionsVoiture1, Marque.Renault, moteur1, 5, 300, 5, 5);
-            Voiture voiture2 = new Voiture("Peugeot 308", 18000, optionsVoiture2, Marque.Peugeot, moteur2, 8, 400, 5, 5);
-            Moto moto1 = new Moto(10, "Yamaha MT-07", 8000, optionsMoto1, Marque.Peugeot, moteur3);
-            Moto moto2 = new Moto(11, "Ducati Monster", 12000, optionsMoto2, Marque.Renault, moteur4);
-            Camion camion1 = new Camion(10, 1000, 10, "Mercedes Actros", 80000, optionsCamion1, Marque.Audi, moteur5);
+            Voiture voiture1 = new Voiture("Renault Clio", 15000, Marque.Renault, moteur1, 5, 300, 5, 5);
+            Voiture voiture2 = new Voiture("Peugeot 308", 18000, Marque.Peugeot, moteur2, 8, 400, 5, 5);
+            Moto moto1 = new Moto(10, "Yamaha MT-07", 8000, Marque.Peugeot, moteur3);
+            Moto moto2 = new Moto(11, "Ducati Monster", 12000, Marque.Renault, moteur4);
+            Camion camion1 = new Camion(10, 1000, 10, "Mercedes Actros", 80000, Marque.Audi, moteur5);
+
+            voiture1.AjouterOptions(option1);
+            voiture2.AjouterOptions(option2);
+            moto1.AjouterOptions(option3);
+            moto2.AjouterOptions(option4);
+            camion1.AjouterOptions(option5);
 
             // Création du garage
-            Garage monGarage = new Garage("Mon Garage", new List<Vehicule>());
+            Garage monGarage = new Garage("Mon Garage");
 
             // Ajout des véhicules au garage
             monGarage.AjouterVehicule(voiture1);

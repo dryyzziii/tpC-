@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.GarageGestion.Enum_Garage;
 
-namespace GestionGarage.Classes
+namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
 {
     internal class Moto : Vehicule
     {
@@ -21,16 +23,15 @@ namespace GestionGarage.Classes
 
         public Moto(int cylindres, string nom,
             int prixHT,
-            List<Option> options,
             Marque marque,
-            Moteur moteur) : base(nom, prixHT, options, marque, moteur)
+            Moteur moteur) : base(nom, prixHT, marque, moteur)
         {
             this.cylindres = cylindres;
         }
         #endregion
         public override decimal CalculerTaxe()
         {
-            return (decimal)Math.Floor(this.cylindres * 0.3);
+            return (decimal)Math.Floor(cylindres * 0.3);
         }
     }
 }

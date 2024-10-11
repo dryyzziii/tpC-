@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionGarage.Enum
+namespace GestionGarage.Classes.GarageGestion.Enum_Garage
 {
     internal enum TypeMoteur
     {

@@ -4,40 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionGarage.Classes
+namespace GestionGarage.Classes.GarageGestion
 {
-    internal class Option
+    internal class Moteur
     {
         #region private attributes
         private static int increment = 0;
-        
+
         private int id;
         private string nom;
-        private decimal prix;
+        private decimal puissance;
         #endregion
 
         #region public attributes
         public int Id { get => id; }
         public string Nom { get => nom; set => nom = value; }
-        public decimal Prix { get => prix; set => prix = value; }
+        public decimal Puissance { get => puissance; set => puissance = value; }
         #endregion
 
         #region constructor
-        public Option() { }
+        public Moteur() { }
 
 
-        public Option(string nom, decimal prix) 
+        public Moteur(string name, decimal prix)
         {
-            this.id = ++increment;
-            this.nom = nom;
-            this.prix = prix;
+            id = ++increment;
+            nom = name;
+            puissance = prix;
         }
         #endregion
 
 
         public void Afficher()
         {
-            Console.WriteLine($"Options {id} \nName : {this.nom}\nPrix: {this.prix}\n");
+            Console.WriteLine($"Moteur {id} \nName : {nom}\nPuissance : {puissance}\n");
         }
     }
 }

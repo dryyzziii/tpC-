@@ -4,10 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.GarageGestion.Enum_Garage;
 
-namespace GestionGarage.Classes
+namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
 {
-    internal class Voiture: Vehicule
+    internal class Voiture : Vehicule
     {
         #region private attributes
         private int cheveauxFiscaux;
@@ -29,13 +31,12 @@ namespace GestionGarage.Classes
         public Voiture(
             string nom,
             int prixHT,
-            List<Option> options,
             Marque marque,
             Moteur moteur,
             int tailleCoffre,
             int cheveauxFiscaux,
             int nbPorte,
-            int nbSiege) : base(nom, prixHT, options, marque, moteur)
+            int nbSiege) : base(nom, prixHT, marque, moteur)
         {
             this.tailleCoffre = tailleCoffre;
             this.nbPorte = nbPorte;
@@ -47,7 +48,7 @@ namespace GestionGarage.Classes
         #endregion
         public override decimal CalculerTaxe()
         {
-            return this.cheveauxFiscaux * 10;
+            return cheveauxFiscaux * 10;
         }
 
     }

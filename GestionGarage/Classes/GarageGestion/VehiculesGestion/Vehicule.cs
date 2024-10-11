@@ -1,11 +1,12 @@
-﻿using GestionGarage.Enum;
+﻿using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.GarageGestion.Enum_Garage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionGarage.Classes
+namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
 {
     internal abstract class Vehicule
     {
@@ -33,12 +34,12 @@ namespace GestionGarage.Classes
         public Vehicule() { }
 
 
-        public Vehicule(string nom, int prixHT, List<Option> options, Marque marque, Moteur moteur)
+        public Vehicule(string nom, int prixHT, Marque marque, Moteur moteur)
         {
-            this.id = ++increment;
+            id = ++increment;
             this.nom = nom;
             this.prixHT = prixHT;
-            this.optionsList = options;
+            optionsList = new List<Option>();
             this.marque = marque;
             this.moteur = moteur;
         }
@@ -52,17 +53,17 @@ namespace GestionGarage.Classes
             Console.WriteLine($"\n========== Détails du véhicule (ID: {id}) ==========");
             Console.ResetColor();
 
-            Console.WriteLine($"Nom       : {this.nom}");
+            Console.WriteLine($"Nom       : {nom}");
             Console.WriteLine($"Marque    : {marque}");
-            Console.WriteLine($"Prix Total: {PrixTotal()}€ (HT : {this.prixHT}€, Taxes : {CalculerTaxe()}€)");
+            Console.WriteLine($"Prix Total: {PrixTotal()}€ (HT : {prixHT}€, Taxes : {CalculerTaxe()}€)");
 
             // Affichage des options
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\nOptions :");
             Console.ResetColor();
-            if (this.optionsList.Count > 0)
+            if (optionsList.Count > 0)
             {
-                this.optionsList.ForEach(option => option.Afficher());
+                optionsList.ForEach(option => option.Afficher());
             }
             else
             {
@@ -73,7 +74,7 @@ namespace GestionGarage.Classes
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nMoteur :");
             Console.ResetColor();
-            this.Moteur.Afficher();
+            Moteur.Afficher();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("=============================================\n");
@@ -81,16 +82,16 @@ namespace GestionGarage.Classes
         }
         public void AfficherOptions()
         {
-            this.optionsList.ForEach(op => op.Afficher());
+            optionsList.ForEach(op => op.Afficher());
         }
         public void AjouterOptions(Option op)
         {
-            this.optionsList.Add(op);
+            optionsList.Add(op);
         }
         public decimal PrixTotal()
         {
-            decimal price = this.prixHT + CalculerTaxe();
-            this.optionsList.ForEach(op => price += op.Prix);
+            decimal price = prixHT + CalculerTaxe();
+            optionsList.ForEach(op => price += op.Prix);
             return price;
         }
         #endregion

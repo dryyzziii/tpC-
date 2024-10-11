@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.GarageGestion.Enum_Garage;
 
-namespace GestionGarage.Classes
+namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
 {
     internal class Camion : Vehicule
     {
@@ -23,8 +25,8 @@ namespace GestionGarage.Classes
         #region constructor 
         public Camion() { }
 
-        public Camion(int nbEssieu, int poids, int volume, string nom, int prixHT, List<Option> options, Marque marque, Moteur moteur)
-            : base(nom, prixHT, options, marque, moteur)
+        public Camion(int nbEssieu, int poids, int volume, string nom, int prixHT, Marque marque, Moteur moteur)
+            : base(nom, prixHT, marque, moteur)
         {
             this.nbEssieu = nbEssieu;
             this.poids = poids;
@@ -33,7 +35,7 @@ namespace GestionGarage.Classes
         #endregion
         public override decimal CalculerTaxe()
         {
-            return this.nbEssieu * 50;
+            return nbEssieu * 50;
         }
     }
 }

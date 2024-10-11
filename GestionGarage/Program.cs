@@ -1,4 +1,6 @@
-﻿using GestionGarage.Classes.Test;
+﻿using GestionGarage.Classes.GarageGestion;
+using GestionGarage.Classes.MenuGestion;
 
-GarageTest garageTest = new GarageTest();
-garageTest.TesterGarage();
+Garage garage = new Garage("super garage !");
+Menu menu = new Menu(garage);
+menu.Start();
