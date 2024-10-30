@@ -1,9 +1,11 @@
-﻿using GestionGarage.Classes.GarageGestion;
+﻿using GestionGarage.Classes.Exceptions;
+using GestionGarage.Classes.GarageGestion;
 using GestionGarage.Classes.GarageGestion.Enum_Garage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
@@ -22,7 +24,7 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
         #endregion
 
         #region public attributes
-        public int Id { get => id; }
+        public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public decimal PrixHT { get => prixHT; set => prixHT = value; }
         public List<Option> OptionsList { get => optionsList; set => optionsList = value; }
@@ -31,18 +33,36 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
         #endregion
 
         #region constructor
-        public Vehicule() { }
+  
+        public Vehicule() 
+        {
+            this.id = ++increment;
+            OptionsList = new List<Option>();
+        }
 
-
-        public Vehicule(string nom, int prixHT, Marque marque, Moteur moteur)
+        public Vehicule(string Nom, int PrixHT, Marque Marque, Moteur Moteur)
         {
             id = ++increment;
-            this.nom = nom;
-            this.prixHT = prixHT;
-            optionsList = new List<Option>();
-            this.marque = marque;
-            this.moteur = moteur;
+            this.nom = Nom;
+            this.prixHT = PrixHT;
+            this.optionsList = new List<Option>();
+            this.marque = Marque;
+            this.moteur = Moteur;
         }
+
+        [JsonConstructor]
+        public Vehicule(string Nom, int PrixHT, Marque Marque, Moteur Moteur, List<Option> OptionsList, int Id)
+        {
+            this.Id = Id;
+            this.Nom = Nom;
+            this.prixHT = PrixHT;
+            this.optionsList = OptionsList;
+            this.marque = Marque;
+            this.moteur = Moteur;
+        }
+
+
+
         #endregion
 
         #region public methodes
@@ -55,7 +75,7 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
 
             Console.WriteLine($"Nom       : {nom}");
             Console.WriteLine($"Marque    : {marque}");
-            Console.WriteLine($"Prix Total: {PrixTotal()}€ (HT : {prixHT}€, Taxes : {CalculerTaxe()}€)");
+            Console.WriteLine($"Prix Total: {PrixTotal()}€ (HT : {prixHT}€, Taxes : {PrixTotal() - prixHT}€)");
 
             // Affichage des options
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -86,7 +106,43 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
         }
         public void AjouterOptions(Option op)
         {
+            if (optionsList.Any(o => o.Id == op.Id))
+            {
+                throw new DuplicateOptionException(op.Nom);
+            }
             optionsList.Add(op);
+        }
+
+
+        public void SupprimerOption(int id)
+        {
+            Option op = optionsList.Find(v => v.Id == id);
+            if (op != null)
+            {
+                optionsList.Remove(op);
+            }
+            else
+            {
+                throw new Exception("Option non trouvé.");
+            }
+        }
+        public bool OptionExiste(int id)
+        {
+            return optionsList.Find(v => v.Id == id) != null;
+        }
+
+
+        public Option GetOptionById(int id)
+        {
+            Option op = optionsList.Find(o => o.Id == id);
+            if (op != null)
+            {
+                return op;
+            }
+            else
+            {
+                throw new Exception("Option non trouvé.");
+            }
         }
         public decimal PrixTotal()
         {

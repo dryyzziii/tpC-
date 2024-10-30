@@ -1,0 +1,167 @@
+{
+  "Nom": "Mon Garage",
+  "Vehicules": [
+    {
+      "TypeVehicule": "Moto",
+      "Id": 3,
+      "Nom": "Yamaha MT-07",
+      "PrixHT": 8000,
+      "OptionsList": [
+        {
+          "Id": 3,
+          "Nom": "Si\u00E8ges chauffants",
+          "Prix": 600
+        }
+      ],
+      "Marque": 0,
+      "Moteur": {
+        "Type": 3,
+        "Puissance": 2000,
+        "Id": 3
+      },
+      "Cylindres": 10
+    },
+    {
+      "TypeVehicule": "Moto",
+      "Id": 4,
+      "Nom": "Ducati Monster",
+      "PrixHT": 12000,
+      "OptionsList": [
+        {
+          "Id": 4,
+          "Nom": "Cam\u00E9ra de recul",
+          "Prix": 500
+        }
+      ],
+      "Marque": 1,
+      "Moteur": {
+        "Type": 1,
+        "Puissance": 2000,
+        "Id": 4
+      },
+      "Cylindres": 11
+    },
+    {
+      "TypeVehicule": "Voiture",
+      "Id": 1,
+      "Nom": "Renault Clio",
+      "PrixHT": 15000,
+      "OptionsList": [
+        {
+          "Id": 1,
+          "Nom": "Climatisation",
+          "Prix": 1200
+        }
+      ],
+      "Marque": 1,
+      "Moteur": {
+        "Type": 0,
+        "Puissance": 2000,
+        "Id": 1
+      },
+      "CheveauxFiscaux": 300,
+      "NbSiege": 5,
+      "NbPorte": 5,
+      "TailleCoffre": 5
+    },
+    {
+      "TypeVehicule": "Voiture",
+      "Id": 2,
+      "Nom": "Peugeot 308",
+      "PrixHT": 18000,
+      "OptionsList": [
+        {
+          "Id": 2,
+          "Nom": "GPS",
+          "Prix": 800
+        }
+      ],
+      "Marque": 0,
+      "Moteur": {
+        "Type": 2,
+        "Puissance": 2000,
+        "Id": 2
+      },
+      "CheveauxFiscaux": 400,
+      "NbSiege": 5,
+      "NbPorte": 5,
+      "TailleCoffre": 8
+    },
+    {
+      "TypeVehicule": "Camion",
+      "Id": 5,
+      "Nom": "Mercedes Actros",
+      "PrixHT": 80000,
+      "OptionsList": [
+        {
+          "Id": 5,
+          "Nom": "Toit ouvrant",
+          "Prix": 1500
+        }
+      ],
+      "Marque": 3,
+      "Moteur": {
+        "Type": 0,
+        "Puissance": 2000,
+        "Id": 5
+      },
+      "NbEssieu": 10,
+      "Poids": 1000,
+      "Volume": 10
+    }
+  ],
+  "Options": [
+    {
+      "Id": 1,
+      "Nom": "Climatisation",
+      "Prix": 1200
+    },
+    {
+      "Id": 2,
+      "Nom": "GPS",
+      "Prix": 800
+    },
+    {
+      "Id": 3,
+      "Nom": "Si\u00E8ges chauffants",
+      "Prix": 600
+    },
+    {
+      "Id": 4,
+      "Nom": "Cam\u00E9ra de recul",
+      "Prix": 500
+    },
+    {
+      "Id": 5,
+      "Nom": "Toit ouvrant",
+      "Prix": 1500
+    }
+  ],
+  "Moteurs": [
+    {
+      "Type": 0,
+      "Puissance": 2000,
+      "Id": 1
+    },
+    {
+      "Type": 2,
+      "Puissance": 2000,
+      "Id": 2
+    },
+    {
+      "Type": 3,
+      "Puissance": 2000,
+      "Id": 3
+    },
+    {
+      "Type": 1,
+      "Puissance": 2000,
+      "Id": 4
+    },
+    {
+      "Type": 0,
+      "Puissance": 2000,
+      "Id": 5
+    }
+  ]
+}

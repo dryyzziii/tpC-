@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace GestionGarage.Classes.Exceptions
 {
-    internal class MenuException : Exception
+    public class InputFormatException : Exception
     {
-        public MenuException(string message) : base(message) { }
+        public InputFormatException(string message) : base(message) { }
     }
 }

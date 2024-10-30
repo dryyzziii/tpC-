@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using GestionGarage.Classes.GarageGestion;
 using GestionGarage.Classes.GarageGestion.Enum_Garage;
@@ -42,6 +43,25 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
             this.nbPorte = nbPorte;
             this.nbSiege = nbSiege;
             this.cheveauxFiscaux = cheveauxFiscaux;
+        }
+
+        [JsonConstructor]
+        public Voiture(
+            string Nom,
+            int PrixHT,
+            int Id,
+            Marque Marque,
+            Moteur Moteur,
+            List<Option> OptionsList,
+            int TailleCoffre,
+            int CheveauxFiscaux,
+            int NbPorte,
+            int NbSiege) : base(Nom, PrixHT, Marque, Moteur, OptionsList,Id)
+        {
+            this.TailleCoffre = TailleCoffre;
+            this.NbPorte = NbPorte;
+            this.NbSiege = NbSiege;
+            this.CheveauxFiscaux = CheveauxFiscaux;
         }
 
 

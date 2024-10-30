@@ -8,11 +8,11 @@ namespace GestionGarage.Classes.GarageGestion.Test
 {
     internal class GarageTest
     {
-        public void TesterGarage()
+        public Garage TesterGarage()
         {
             // Début des tests
             AfficherTitre("\nDémarrage des tests de gestion du garage...\n");
-
+            Garage monGarage = new Garage("Mon Garage");
             // Création de plusieurs options
             Option option1 = new Option("Climatisation", 1200);
             Option option2 = new Option("GPS", 800);
@@ -20,12 +20,24 @@ namespace GestionGarage.Classes.GarageGestion.Test
             Option option4 = new Option("Caméra de recul", 500);
             Option option5 = new Option("Toit ouvrant", 1500);
 
+            monGarage.AjouterOption(option1);
+            monGarage.AjouterOption(option2);
+            monGarage.AjouterOption(option3);
+            monGarage.AjouterOption(option4);
+            monGarage.AjouterOption(option5);
 
-            Moteur moteur1 = new Moteur("nom moteur1", 2000);
-            Moteur moteur2 = new Moteur("nom moteur2", 2000);
-            Moteur moteur3 = new Moteur("nom moteur3", 2000);
-            Moteur moteur4 = new Moteur("nom moteur4", 2000);
-            Moteur moteur5 = new Moteur("nom moteur5", 2000);
+
+            Moteur moteur1 = new Moteur(TypeMoteur.Diesel, 2000);
+            Moteur moteur2 = new Moteur(TypeMoteur.Hybride, 2000);
+            Moteur moteur3 = new Moteur(TypeMoteur.Electrique, 2000);
+            Moteur moteur4 = new Moteur(TypeMoteur.Essence, 2000);
+            Moteur moteur5 = new Moteur(TypeMoteur.Diesel, 2000);
+
+            monGarage.AjouterMoteur(moteur1);
+            monGarage.AjouterMoteur(moteur2);
+            monGarage.AjouterMoteur(moteur3);
+            monGarage.AjouterMoteur(moteur4);
+            monGarage.AjouterMoteur(moteur5);
 
             Voiture voiture1 = new Voiture("Renault Clio", 15000, Marque.Renault, moteur1, 5, 300, 5, 5);
             Voiture voiture2 = new Voiture("Peugeot 308", 18000, Marque.Peugeot, moteur2, 8, 400, 5, 5);
@@ -39,8 +51,6 @@ namespace GestionGarage.Classes.GarageGestion.Test
             moto2.AjouterOptions(option4);
             camion1.AjouterOptions(option5);
 
-            // Création du garage
-            Garage monGarage = new Garage("Mon Garage");
 
             // Ajout des véhicules au garage
             monGarage.AjouterVehicule(voiture1);
@@ -62,6 +72,8 @@ namespace GestionGarage.Classes.GarageGestion.Test
 
             // Fin des tests
             AfficherTitre("\nFin des tests du garage.\n");
+
+            return monGarage;
         }
 
         private void AfficherTitre(string titre)

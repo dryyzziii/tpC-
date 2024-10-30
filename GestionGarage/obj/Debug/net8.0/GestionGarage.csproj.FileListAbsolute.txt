@@ -13,3 +13,9 @@ D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\refint\GestionGarage.
 D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.pdb
 D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.genruntimeconfig.cache
 D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\ref\GestionGarage.dll
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\xunit.abstractions.dll
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\xunit.assert.dll
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\xunit.core.dll
+D:\visualStudioProject\tpC-\GestionGarage\bin\Debug\net8.0\xunit.execution.dotnet.dll
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionGarage.csproj.AssemblyReference.cache
+D:\visualStudioProject\tpC-\GestionGarage\obj\Debug\net8.0\GestionG.0E9EA275.Up2Date

@@ -1,0 +1,25 @@
+{
+  "Nom": "Mon Garage 2",
+  "Vehicules": [
+    {
+      "Id": 1,
+      "Nom": "Peugeot 3008",
+      "PrixHT": 25000,
+      "OptionsList": [],
+      "Marque": 0,
+      "Moteur": {
+        "Type": 0,
+        "Puissance": 150,
+        "Id": 1
+      }
+    }
+  ],
+  "Options": [],
+  "Moteurs": [
+    {
+      "Type": 0,
+      "Puissance": 150,
+      "Id": 1
+    }
+  ]
+}

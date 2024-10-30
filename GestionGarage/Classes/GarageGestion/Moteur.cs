@@ -1,7 +1,9 @@
-﻿using System;
+﻿using GestionGarage.Classes.GarageGestion.Enum_Garage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GestionGarage.Classes.GarageGestion
@@ -11,33 +13,42 @@ namespace GestionGarage.Classes.GarageGestion
         #region private attributes
         private static int increment = 0;
 
-        private int id;
-        private string nom;
+        private TypeMoteur type;
         private decimal puissance;
+        private int id;
         #endregion
 
         #region public attributes
-        public int Id { get => id; }
-        public string Nom { get => nom; set => nom = value; }
+        public TypeMoteur Type { get => type; set => type = value; }
         public decimal Puissance { get => puissance; set => puissance = value; }
+        public int Id { get => id; set => id = value; }
         #endregion
 
         #region constructor
         public Moteur() { }
 
-
-        public Moteur(string name, decimal prix)
+        
+        public Moteur(TypeMoteur Type, decimal Puissance)
         {
-            id = ++increment;
-            nom = name;
-            puissance = prix;
+            this.id = ++increment;
+            this.type = Type;
+            this.puissance = Puissance;
         }
+
+        [JsonConstructor]
+        public Moteur(TypeMoteur Type, decimal Puissance, int Id)
+        {
+            this.Id = Id;
+            this.Type = Type;
+            this.Puissance = Puissance;
+        }
+
         #endregion
 
 
         public void Afficher()
         {
-            Console.WriteLine($"Moteur {id} \nName : {nom}\nPuissance : {puissance}\n");
+            Console.WriteLine($"Moteur {id} \nPuissance : {puissance} \nType: {type}\n");
         }
     }
 }

@@ -1,0 +1,24 @@
+{
+  "Nom": "Test Garage",
+  "Vehicules": [
+    {
+      "TypeVehicule": "Voiture",
+      "Id": 8,
+      "Nom": "Renault Clio",
+      "PrixHT": 15000,
+      "OptionsList": [],
+      "Marque": 1,
+      "Moteur": {
+        "Type": 0,
+        "Puissance": 2000,
+        "Id": 9
+      },
+      "CheveauxFiscaux": 300,
+      "NbSiege": 5,
+      "NbPorte": 5,
+      "TailleCoffre": 5
+    }
+  ],
+  "Options": [],
+  "Moteurs": []
+}

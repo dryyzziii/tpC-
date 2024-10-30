@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GestionGarage.Classes.GarageGestion
@@ -17,7 +18,7 @@ namespace GestionGarage.Classes.GarageGestion
         #endregion
 
         #region public attributes
-        public int Id { get => id; }
+        public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
         public decimal Prix { get => prix; set => prix = value; }
         #endregion
@@ -25,12 +26,19 @@ namespace GestionGarage.Classes.GarageGestion
         #region constructor
         public Option() { }
 
-
         public Option(string nom, decimal prix)
         {
             id = ++increment;
             this.nom = nom;
             this.prix = prix;
+        }
+
+        [JsonConstructor]
+        public Option(int Id, string Nom, decimal Prix)
+        {
+            this.Id = Id;
+            this.Nom = Nom;
+            this.Prix = Prix;
         }
         #endregion
 

@@ -1,20 +1,16 @@
 ﻿using GestionGarage.Classes.Exceptions;
 using GestionGarage.Classes.GarageGestion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace GestionGarage.Classes.MenuGestion
 {
     internal class Menu
     {
         private Garage garage;
+        private MenuVehicule menuVehicule;
 
         public Menu(Garage garage)
         {
             this.garage = garage;
+            this.menuVehicule = new MenuVehicule(garage);
         }
 
         public void Start()
@@ -25,20 +21,29 @@ namespace GestionGarage.Classes.MenuGestion
             {
                 try
                 {
-                    Console.WriteLine("\n===== Menu Gestion du Garage =====");
-                    Console.WriteLine("1. Afficher les véhicules");
-                    Console.WriteLine("2. Ajouter un véhicule");
-                    Console.WriteLine("3. Supprimer un véhicule");
-                    Console.WriteLine("4. Sélectionner un véhicule");
-                    Console.WriteLine("5. Afficher les options d'un véhicule");
-                    Console.WriteLine("6. Ajouter des options à un véhicule");
-                    Console.WriteLine("7. Supprimer des options à un véhicule");
-                    Console.WriteLine("8. Afficher les options");
-                    Console.WriteLine("9. Afficher les marques");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.WriteLine("\n╔════════════════════════════════════════════╗");
+                    Console.WriteLine("║         GESTION DU GARAGE                  ║");
+                    Console.WriteLine("╚════════════════════════════════════════════╝");
+                    Console.ResetColor();
+                    Console.WriteLine();
+
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("1.  Afficher les véhicules");
+                    Console.WriteLine("2.  Ajouter un véhicule");
+                    Console.WriteLine("3.  Supprimer un véhicule");
+                    Console.WriteLine("4.  Sélectionner un véhicule");
+                    Console.WriteLine("5.  Afficher les options d'un véhicule");
+                    Console.WriteLine("6.  Ajouter des options à un véhicule");
+                    Console.WriteLine("7.  Supprimer des options à un véhicule");
+                    Console.WriteLine("8.  Afficher toutes les options");
+                    Console.WriteLine("9.  Afficher les marques disponibles");
                     Console.WriteLine("10. Afficher les types de moteurs");
                     Console.WriteLine("11. Charger le garage");
                     Console.WriteLine("12. Sauvegarder le garage");
                     Console.WriteLine("13. Quitter l'application");
+                    Console.ResetColor();
+                    Console.WriteLine();
 
                     int choix = GetChoixMenu();
                     switch (choix)
@@ -114,7 +119,9 @@ namespace GestionGarage.Classes.MenuGestion
 
         public int GetChoix()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Veuillez saisir votre choix : ");
+            Console.ResetColor();
             string saisie = Console.ReadLine();
             try
             {
@@ -134,32 +141,32 @@ namespace GestionGarage.Classes.MenuGestion
 
         public void AjouterVehicule()
         {
-            // Implémenter la logique pour ajouter un véhicule (entrer les données via la console)
+            menuVehicule.AjouterVehicule();
         }
 
         public void SupprimerVehicule()
         {
-            // Implémenter la logique pour supprimer un véhicule par ID
+            menuVehicule.SupprimerVehicule();
         }
 
         public void SelectionnerVehicule()
         {
-            // Implémenter la logique pour sélectionner un véhicule
+            menuVehicule.SelectionnerVehicule();
         }
 
         public void AfficherOptionsVehicule()
         {
-            // Implémenter la logique pour afficher les options d'un véhicule
+            menuVehicule.AfficherOptionsVehicule();
         }
 
         public void AjouterOptionsVehicule()
         {
-            // Implémenter la logique pour ajouter des options à un véhicule
+            menuVehicule.AjouterOptionsVehicule();
         }
 
         public void SupprimerOptionsVehicule()
         {
-            // Implémenter la logique pour supprimer des options d'un véhicule
+            menuVehicule.SupprimerOptionsVehicule();
         }
 
         public void AfficherOptions()
@@ -177,14 +184,17 @@ namespace GestionGarage.Classes.MenuGestion
             garage.AfficherTypesMoteursDisponibles();
         }
 
+        [STAThread]
         public void ChargerGarage()
         {
-            // Implémenter la logique pour charger les informations du garage depuis un fichier
+            Console.WriteLine("\nEntrez le nom du garage à charger : ");
+            string path = Console.ReadLine();
+            garage.ChargerGarage(path);
         }
 
         public void SauvegarderGarage()
         {
-            // Implémenter la logique pour sauvegarder les informations du garage dans un fichier
+            garage.SauvegarderGarage();
         }
     }
 }

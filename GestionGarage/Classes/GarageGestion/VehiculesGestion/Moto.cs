@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using GestionGarage.Classes.GarageGestion;
 using GestionGarage.Classes.GarageGestion.Enum_Garage;
@@ -21,17 +22,27 @@ namespace GestionGarage.Classes.GarageGestion.VehiculesGestion
         #region constructor 
         public Moto() { }
 
-        public Moto(int cylindres, string nom,
-            int prixHT,
-            Marque marque,
-            Moteur moteur) : base(nom, prixHT, marque, moteur)
+        public Moto(int Cylindres, string Nom,
+            int PrixHT,
+            Marque Marque,
+            Moteur Moteur) : base(Nom, PrixHT, Marque, Moteur)
         {
-            this.cylindres = cylindres;
+            this.Cylindres = Cylindres;
         }
+
+
+        [JsonConstructor]
+        public Moto(int id, string nom, int prixHT,
+            List<Option> optionsList, Marque marque, Moteur moteur, int cylindres)
+            : base(nom, prixHT, marque, moteur, optionsList, id)
+        {
+            this.Cylindres = cylindres;
+        }
+
         #endregion
         public override decimal CalculerTaxe()
         {
-            return (decimal)Math.Floor(cylindres * 0.3);
+            return (decimal)Math.Floor(Cylindres * 0.3);
         }
     }
 }
