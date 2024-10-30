@@ -1,6 +1,6 @@
 # Application de Gestion de Garage
 
-**Version** : 1.0
+**Version** : 2.0
 
 ## Description du projet
 Ce projet est une application de gestion de garage développée dans le cadre du cours de programmation orientée objet en C#. L'objectif est de mettre en œuvre des concepts avancés de POO, tels que les classes abstraites, les interfaces, les exceptions personnalisées et la sérialisation. Cette application permet de gérer des véhicules de différents types (voitures, camions et motos) ainsi que leurs caractéristiques propres et options associées.
@@ -50,16 +50,6 @@ Le projet est organisé en plusieurs dossiers pour une meilleure gestion du code
 - `MenuGestion` : Contient les classes liées à l'affichage du menu interactif et à la gestion des interactions avec l'utilisateur.
 - `JSON` : Dossier de stockage pour les fichiers de sauvegarde JSON du garage.
 
-## Instructions pour l'exécution
-1. Cloner le projet Visual Studio.
-2. Nettoyer la solution (`Menu Générer / Nettoyer la solution`) pour enlever les fichiers temporaires.
-3. Supprimer le dossier `.vs` caché.
-4. Exécuter le fichier `Program.cs` dans Visual Studio pour lancer l'application.
-5. Interagir avec le menu pour gérer les véhicules et le garage.
-
-## Sérialisation
-La sérialisation des objets est effectuée en ajoutant l'attribut `[Serializable]` aux classes des véhicules. Les méthodes `Enregistrer` et `Charger` permettent de sauvegarder et de charger les données du garage.
-
 ## Exemples d'utilisation
 ### Ajouter un véhicule
 1. Sélectionner l'option 2 du menu.
@@ -69,14 +59,6 @@ La sérialisation des objets est effectuée en ajoutant l'attribut `[Serializabl
 ### Afficher les véhicules
 1. Sélectionner l'option 1 pour voir tous les véhicules du garage.
 2. L'application affichera les informations détaillées de chaque véhicule, y compris le prix total (prix HT + taxe).
-
-## Installation et livraison
-Pour rendre l'application, veuillez :
-1. Créer un fichier compressé (zip, 7z, rar) contenant l’ensemble des fichiers de la solution et du projet.
-2. Nommer le fichier au format `nom.prenom.zip`.
-3. Déposer le fichier dans le dossier de rendu **MonCampus** ou l'envoyer à l'adresse suivante : nicolas.chevalier4@intervenant.igensia.com.
-
-**Note** : N'oubliez pas de nettoyer la solution et de supprimer le dossier `.vs` avant de créer le fichier compressé.
 
 ---
 
