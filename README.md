@@ -50,15 +50,21 @@ Le projet est organisé en plusieurs dossiers pour une meilleure gestion du code
 - `MenuGestion` : Contient les classes liées à l'affichage du menu interactif et à la gestion des interactions avec l'utilisateur.
 - `JSON` : Dossier de stockage pour les fichiers de sauvegarde JSON du garage.
 
-## Exemples d'utilisation
-### Ajouter un véhicule
-1. Sélectionner l'option 2 du menu.
-2. Entrer les informations demandées, y compris le nom, la marque, le type de moteur et le prix.
-3. Le véhicule sera ajouté au garage et sauvegardé automatiquement.
+## Exécution des tests
 
-### Afficher les véhicules
-1. Sélectionner l'option 1 pour voir tous les véhicules du garage.
-2. L'application affichera les informations détaillées de chaque véhicule, y compris le prix total (prix HT + taxe).
+### Packages nécessaires
+Pour exécuter les tests avec **xUnit** dans Visual Studio, assurez-vous d'avoir installé les packages suivants :
+
+- **Microsoft.NET.Test.Sdk (17.11.1)**
+- **xunit (2.9.2)**
+- **xunit.runner.visualstudio (2.8.2)**
+
+Ces packages sont nécessaires pour la détection et l'exécution des tests dans Visual Studio. Vous pouvez les installer via le gestionnaire de packages NuGet.
+
+### Étapes pour exécuter les tests dans Visual Studio
+1. Ouvrez le projet dans Visual Studio.
+2. Allez dans **Test** > **Fenêtre de l'explorateur de tests** pour afficher la fenêtre de tests.
+3. Cliquez sur **Exécuter tout** dans la fenêtre de l'explorateur de tests pour exécuter tous les tests de l'application.
+4. Les résultats de chaque test seront affichés dans cette fenêtre.
 
 ---
-

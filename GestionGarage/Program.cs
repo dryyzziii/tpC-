@@ -4,7 +4,7 @@ using GestionGarage.Classes.MenuGestion;
 using System.Text;
 
 Console.OutputEncoding = Encoding.UTF8;
-GarageTests test = new GarageTests();
+TestMenu test = new TestMenu();
 
 if (test.AfficherMenuTests())
 {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\visualStudioProject\\tpC-\\GestionGarage\\GestionGarage.csproj": {}
+    "D:\\visualStudioProject\\tpC\\GestionGarage\\GestionGarage.csproj": {}
   },
   "projects": {
-    "D:\\visualStudioProject\\tpC-\\GestionGarage\\GestionGarage.csproj": {
+    "D:\\visualStudioProject\\tpC\\GestionGarage\\GestionGarage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\visualStudioProject\\tpC-\\GestionGarage\\GestionGarage.csproj",
+        "projectUniqueName": "D:\\visualStudioProject\\tpC\\GestionGarage\\GestionGarage.csproj",
         "projectName": "GestionGarage",
-        "projectPath": "D:\\visualStudioProject\\tpC-\\GestionGarage\\GestionGarage.csproj",
+        "projectPath": "D:\\visualStudioProject\\tpC\\GestionGarage\\GestionGarage.csproj",
         "packagesPath": "C:\\Users\\Administrateur\\.nuget\\packages\\",
-        "outputPath": "D:\\visualStudioProject\\tpC-\\GestionGarage\\obj\\",
+        "outputPath": "D:\\visualStudioProject\\tpC\\GestionGarage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,9 +50,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.11.1, )"
+            },
             "xunit": {
               "target": "Package",
               "version": "[2.9.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.2, )"
             }
           },
           "imports": [
